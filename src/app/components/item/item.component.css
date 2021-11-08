@@ -37,3 +37,16 @@ div {
     padding: 0 5px;
 }
 
+.completed {
+    text-decoration: line-through;
+    color: #ccc;
+}
+
+.completed .total {
+    color: #ccc;
+}
+
+.row:hover {
+    border-radius: 3px;
+    background: #eee;
+}

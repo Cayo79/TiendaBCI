@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Item } from 'src/app/models/item';
 
 @Component({
@@ -9,6 +9,8 @@ import { Item } from 'src/app/models/item';
 export class ItemComponent implements OnInit {
 
   @Input() item: Item = new Item();
+  @Output() deleteItem: EventEmitter<Item> = new EventEmitter();
+  @Output() toggleItem: EventEmitter<Item> = new EventEmitter();
 
   constructor() { }
 
@@ -17,6 +19,11 @@ export class ItemComponent implements OnInit {
 
   onToggle(item: Item) {
     item.completed = !item.completed;
+    this.toggleItem.emit(item);
+  }
+
+  onDelete(item: Item) {
+    this.deleteItem.emit(item);
   }
 
 }

@@ -1,13 +1,10 @@
-<p>items works!</p>
-
-<div>
-    <div *ngFor="let item of items">
-        {{ item.title }}
-    </div>
-</div>
-
-<div>
-    <app-item *ngFor="let i of items" [item]="i">
+<div class="main-container">
+    <app-item *ngFor="let i of items" 
+        [item]="i"
+        (deleteItem)="borrarItem($event)"
+        (toggleItem)="toggleItem($event)">
 
     </app-item>
+
+    <app-total [mensaje]="sms" [total]="total"></app-total>
 </div>
