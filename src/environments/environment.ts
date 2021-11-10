@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  servicios: {
+    urlservice: 'https://zay-shop-base-default-rtdb.firebaseio.com/',
+    obtenerAbout: 'https://zay-shop-base-default-rtdb.firebaseio.com/about.json',
+    obtenerBrands: 'https://zay-shop-base-default-rtdb.firebaseio.com/ecom/marcas.json'
+  }
 };
 
 /*
