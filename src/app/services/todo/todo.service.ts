@@ -10,7 +10,7 @@ export class TodoService {
   constructor(private http: HttpClient) { }
 
   getTodos() {
-    return this.http.get<any[]>(`${environment.servicios.serverBackend}` + 'producto/listar');
+    return this.http.get<any[]>(`${environment.servicios.serverBackend}` + 'producto');
   }
 
   getTodo(id: number) {

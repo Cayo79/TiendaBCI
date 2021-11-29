@@ -6,6 +6,6 @@ export const environment = {
     obtenerBrands: 'https://zay-shop-base-default-rtdb.firebaseio.com/ecom/marcas.json',
     obtenerProductosTodos: 'https://zay-shop-base-default-rtdb.firebaseio.com/ecom/productos.json',
     obtenerProducto: 'https://zay-shop-base-default-rtdb.firebaseio.com/ecom/productos/',
-    serverBackend: 'http://localhost:8080/'
+    serverBackend: 'http://localhost:8181/'
   }
 };
