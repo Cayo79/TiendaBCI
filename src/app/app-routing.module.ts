@@ -5,8 +5,12 @@ import { AddItemComponent } from './components/add-item/add-item.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { ItemsComponent } from './components/items/items.component';
+import { LoginComponent } from './components/login/login.component';
 import { ProductsComponent } from './components/products/products.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
+import { UserComponent } from './components/user/user.component';
+import { GuardService } from 'src/app/services/auth/guard.service'
+import { TodoComponent } from './components/todo/todo.component';
 
 const routes: Routes = [
   {
@@ -36,6 +40,18 @@ const routes: Routes = [
   {
     path: 'product/:idProd',
     component: SingleProductComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'users',
+    component: UserComponent, canActivate: [GuardService]
+  },
+  {
+    path: 'todos',
+    component: TodoComponent, canActivate: [GuardService]
   }
 ];
 
