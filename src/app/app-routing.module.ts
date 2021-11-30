@@ -15,31 +15,36 @@ import { TodoComponent } from './components/todo/todo.component';
 const routes: Routes = [
   {
     path: 'items',
-    component: ItemsComponent
+    component: ItemsComponent, canActivate: [GuardService]
   },
   {
     path: 'add',
-    component: AddItemComponent
+    component: AddItemComponent, canActivate: [GuardService]
+  },
+  {
+    path: 'home',
+    component: HomeComponent, canActivate: [GuardService]
   },
   {
     path: '',
-    component: HomeComponent
+    redirectTo: 'login',
+    pathMatch: 'full'
   },
   {
     path: 'about',
-    component: AboutComponent
+    component: AboutComponent, canActivate: [GuardService]
   },
   {
     path: 'contact',
-    component: ContactComponent
+    component: ContactComponent, canActivate: [GuardService]
   },
   {
     path: 'products',
-    component: ProductsComponent
+    component: ProductsComponent, canActivate: [GuardService]
   },
   {
     path: 'product/:idProd',
-    component: SingleProductComponent
+    component: SingleProductComponent, canActivate: [GuardService]
   },
   {
     path: 'login',
