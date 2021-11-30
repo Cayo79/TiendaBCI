@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,10 @@ import { BrandsComponent } from './components/brands/brands.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ProductsComponent } from './components/products/products.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
+import { LoginComponent } from './components/login/login.component';
+import { UserComponent } from './components/user/user.component';
+import { TodoComponent } from './components/todo/todo.component';
+import { AuthInterceptorService } from './services/auth/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,10 @@ import { SingleProductComponent } from './components/single-product/single-produ
     BrandsComponent,
     ContactComponent,
     ProductsComponent,
-    SingleProductComponent
+    SingleProductComponent,
+    LoginComponent,
+    UserComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +49,11 @@ import { SingleProductComponent } from './components/single-product/single-produ
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

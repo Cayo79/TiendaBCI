@@ -10,7 +10,7 @@ export class Products {
     nombre: string = '';
     precio: string = '';
     raiting: number = 0;
-    tallas: string = ''
+    tallas: string = '';
 }
 
 export class Miniatura {

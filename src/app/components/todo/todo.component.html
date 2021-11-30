@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let prod of todo$ | async">
+        <input type="checkbox" [(ngModel)]="prod.estatus"> {{prod.nombre}}
+    </li>
+</ul>
